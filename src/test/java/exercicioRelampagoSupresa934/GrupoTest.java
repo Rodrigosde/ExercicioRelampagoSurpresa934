@@ -9,13 +9,20 @@ class GrupoTest {
     void deveRetornarEscolaridadePresidenteGrupo(){
         Grupo grupo = new Grupo();
         Funcionario presidente = new Funcionario();
-        Escolaridade escolaridade = new Escolaridade();
-
-        escolaridade.setDescricao("Doutor");
+        Escolaridade escolaridade = new Escolaridade("Doutor");
 
         presidente.setEscolaridade(escolaridade);
         grupo.setPresidente(presidente);
+        assertEquals("Doutor",grupo.getEscolaridadePresidente());
+    }
 
-       // assertEquals("Doutor",grupo.getEscolaridadePresidente());
+    @Test
+    void deveRetornarSemEscolaridadeDoPresidenteDoGrupo(){
+        Funcionario presidente = new Funcionario();
+        Grupo grupo = new Grupo(presidente);
+
+        grupo.setPresidente(presidente);
+
+        assertEquals("Escolaridade não informada", grupo.getEscolaridadePresidente());
     }
 }

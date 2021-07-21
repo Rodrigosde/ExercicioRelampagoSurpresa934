@@ -33,4 +33,7 @@ public class Funcionario {
     public String getPaisAlocacaoFuncionario(){
         return "ok";
     }
+    public String getEscolaridadeFuncionario(){
+        return escolaridade.getDescricao();
+    }
 }

@@ -5,6 +5,12 @@ public class Grupo {
     private Pais sede;
     private Funcionario presidente;
 
+    public Grupo(Funcionario presidente) {
+        if (presidente != null)
+            this.presidente = presidente;
+    }
+    public Grupo() {}
+
     public Pais getSede() {
         return sede;
     }
@@ -20,13 +26,9 @@ public class Grupo {
     public void setPresidente(Funcionario presidente) {
         this.presidente = presidente;
     }
-/*
     public String getEscolaridadePresidente(){
-        if (this.presidente == null) {
-            throw new NullPointerException("Grupo sem presidente");
-        }
-        return this.presidente.getEscolaridade();
+        if (presidente.getEscolaridade() == null)
+            return "Escolaridade não informada";
+        return presidente.getEscolaridadeFuncionario();
     }
-
- */
 }
