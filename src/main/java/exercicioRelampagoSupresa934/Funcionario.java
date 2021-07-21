@@ -31,7 +31,9 @@ public class Funcionario {
     }
 
     public String getPaisAlocacaoFuncionario(){
-        return "ok";
+        if (alocacao.getEmpresa().getGrupo().getSede() == null)
+            return "País não informado";
+        return alocacao.getEmpresa().getGrupo().getSede().getNomePais();
     }
     public String getEscolaridadeFuncionario(){
         return escolaridade.getDescricao();
